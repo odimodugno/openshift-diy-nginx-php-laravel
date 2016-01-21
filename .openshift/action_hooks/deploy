@@ -109,8 +109,5 @@ fi
 if [ ! -d ${OPENSHIFT_REPO_DIR}vendor ]; then
   cd ${OPENSHIFT_REPO_DIR}
   echo "Running 'composer install'..."
-  php ${OPENSHIFT_DATA_DIR}/composer/bin/composer.phar install
-  
-  echo "Running 'php artisan migrate --force' ..."
-  php artisan migrate --force
+  php ${OPENSHIFT_DATA_DIR}/composer/bin/composer.phar install --ignore-platform-reqs --no-dev
 fi
